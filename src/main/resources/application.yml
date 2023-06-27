@@ -9,3 +9,7 @@ spring:
         url: jdbc:mysql://localhost:3306/sb_of_vsc?serverTimezone=Asia/Seoul
         username: root
         password: root1234
+    thymeleaf:
+        suffix: .html
+        mode: HTML
+        cache: false
