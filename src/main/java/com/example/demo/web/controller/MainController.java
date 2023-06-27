@@ -11,16 +11,11 @@ public class MainController {
     
     @RequestMapping("/")
     public String index() {
-        return "/index";
-    }
-
-    @RequestMapping("/err")
-    public void errorTest() throws Exception {
-        throw new Exception("i am error");
+        return "index";
     }
 
     @RequestMapping("/error.do")
     public String exceptionPage(HttpServletRequest request, HttpServletResponse response) {
-        return "/error";
+        return "error/error";
     }
 }
