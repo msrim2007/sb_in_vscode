@@ -16,12 +16,9 @@
 
             <!-- Inner -->
             <div class="inner">
-
-                <!-- header fragment -->
-                <th:block th:replace="~{fragments/header :: headerFragment}"></th:block>
                 
-                <!-- banner fragment -->
-                <th:block th:replace="~{fragments/banner :: bannerFragment}"></th:block>
+                <!-- header fragment -->
+                <th:block th:replace="~{fragments/boardHeader :: boardHeaderFragment}"></th:block>
 
                 <!-- content -->
                 <th:block layout:fragment="content"></th:block>
