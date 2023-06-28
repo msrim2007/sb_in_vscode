@@ -5,15 +5,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/basic/css/basic.css}" rel="stylesheet" />
 </head>
-<body>
-    <!-- header fragment -->
-    <th:block th:replace="~{fragments/header :: headerFragment}"></th:block>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-    <!-- content -->
-    <th:block layout:fragment="content"></th:block>
+        <!-- Main -->
+        <div id="main">
 
-    <!-- footer fragment -->
-    <th:block th:replace="~{fragments/footer :: footerFragment}"></th:block>
+            <!-- Inner -->
+            <div class="inner">
+
+                <!-- header fragment -->
+                <th:block th:replace="~{fragments/header :: headerFragment}"></th:block>
+
+                <!-- content -->
+                <th:block layout:fragment="content"></th:block>
+
+            </div>
+
+        </div>
+
+        <!-- sidebar fragment -->
+        <th:block th:replace="~{fragments/sidebar :: sidebarFragment}"></th:block>
+
+    </div>
+    
+    <!-- Scripts -->
+    <script type="text/javascript" th:src="@{/basic/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/browser.min.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/breakpoints.min.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/util.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/basic.js}"></script>
 </body>
 </html>
