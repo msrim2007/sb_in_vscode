@@ -2089,7 +2089,7 @@ button,
     color: inherit;
     font-family: "Roboto Slab", serif;
     font-size: 1.125em; }
-  #header .icons {
+  #header .account {
     text-align: right; }
   @media screen and (max-width: 1680px) {
     #header {
@@ -2100,7 +2100,7 @@ button,
       #header .logo {
         font-size: 1.25em;
         margin: 0; }
-      #header .icons {
+      #header .account {
         height: 5em;
         line-height: 5em;
         position: absolute;

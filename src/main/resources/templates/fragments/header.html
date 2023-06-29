@@ -4,12 +4,12 @@
     <!-- Header -->
     <header id="header">
         <a href="/" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
-        <ul class="icons">
-            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-            <li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-            <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+        <ul class="account">
+            <th:block th:if="${userDTO != null}">
+                <a href="#" class="username" th:text="${userDTO.USER_NAME}"></a>
+                <a href="#" class="logout">로그아웃</a>
+            </th:block>
+            <a th:if="${userDTO == null}" href="#" class="login"><strong>로그인</strong></a>
         </ul>
     </header>
 </div>

@@ -3,22 +3,35 @@
         xmlns:th="http://www.thymeleaf.org"
         xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{layouts/board_layout}">
-
+        
     <div layout:fragment="content">
         <h1>공지사항리스트 목록입니다.</h1>
         <div class="tableWrapper">
             <table class="table">
                 <thead>
                     <tr>
-                        <th>HI</th>
-                        <th>HELLO</th>
+                        <th>INDEX</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>조회수</th>
+                        <th>좋아요</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>hi</td>
-                        <td>hello</td>
-                    </tr>
+                    <th:block th:if="${#lists.size(noticeList) > 0}">
+                        <tr th:each="notice : ${noticeList}">
+                            <td th:text="${notice.NOTICE_SEQNO}"></td>
+                            <td th:text="${notice.NOTICE_TITLE}"></td>
+                            <td th:text="${notice.NOTICE_REG_USER_ID}"></td>
+                            <td th:text="${notice.NOTICE_VIEW_CNT}"></td>
+                            <td th:text="${notice.NOTICE_LIKE_CNT}"></td>
+                        </tr>
+                    </th:block>
+                    <th:block th:if="${#lists.size(noticeList) <= 0}">
+                        <tr>
+                            <td colspan="5" style="text-align: center;">게시된 공지사항이 없습니다.</td>
+                        </tr>
+                    </th:block>
                 </tbody>
             </table>
 
