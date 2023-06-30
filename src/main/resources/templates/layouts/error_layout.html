@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/basic/css/basic.css}" rel="stylesheet" />
+</head>
+<body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <div id="main">
+
+            <!-- Inner -->
+            <div class="inner">
+                <!-- content -->
+                <th:block layout:fragment="content"></th:block>
+            </div>
+
+        </div>
+
+        <!-- sidebar fragment -->
+        <th:block th:replace="~{fragments/sidebar :: sidebarFragment}"></th:block>
+        
+    </div>
+    
+    <!-- Scripts -->
+    <script type="text/javascript" th:src="@{/basic/js/jquery.min.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/browser.min.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/breakpoints.min.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/util.js}"></script>
+    <script type="text/javascript" th:src="@{/basic/js/basic.js}"></script>
+</body>
+</html>

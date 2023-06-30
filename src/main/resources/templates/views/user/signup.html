@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layouts/board_layout}">
+        
+    <div layout:fragment="content">
+        <div class="formWrapper">
+            <form id="signUpForm" name="userDTO">
+                NAME <input type="text" name="USER_NM" required="required" maxlength="18">
+                ID <input type="text" name="USER_ID" required="required" maxlength="20">
+                PW <input type="password" name="USER_PW" required="required" maxlength="32">
+                <button type="button" id="submitSignUp" style="margin-top: 12px;">가입</button>
+            </form>
+        </div>
+
+        <script defer th:inline="javascript">
+            document.querySelector("#submitSignUp").addEventListener('click', (e) => {
+                fetch('/user/Ajax/signUpRequest.do', {
+                    method: 'POST',
+                    body: new FormData(document.getElementById('signUpForm'))
+                }).then(response => {
+                    if (!response.ok) throw '문제가 발생했습니다.';
+                    return response.json();
+                }).then(res => {
+                    if (res.result == 'fail') throw res.msg;
+                    
+                }).catch(err => alert(err));
+            });
+        </script>
+    </div>
+</body>
+</html>

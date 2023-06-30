@@ -13,6 +13,7 @@ public class WebMvcConfig implements WebMvcConfigurer{
     public void addInterceptors(InterceptorRegistry reg) {
         reg.addInterceptor(new UserInfoInterceptor())
             .addPathPatterns("/")
-            .addPathPatterns("/notice/**");
+            .addPathPatterns("/notice/**")
+            .addPathPatterns("/user/**");
     }
 }

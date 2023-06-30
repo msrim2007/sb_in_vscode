@@ -6,5 +6,6 @@
 <configuration>
     <typeAliases>
         <typeAlias alias="noticeDTO" type="com.example.demo.web.dto.NoticeDTO" />
+        <typeAlias alias="userDTO" type="com.example.demo.web.dto.UserDTO" />
     </typeAliases>
 </configuration>
