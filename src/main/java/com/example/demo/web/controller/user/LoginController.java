@@ -49,6 +49,11 @@ public class LoginController {
     private Map<String, String> userSignUpValidate(UserDTO userDTO) {
         Map<String, String> resultMap = new HashMap<>();
 
+        // EMPTY CHECK
+        if (userDTO.getUSER_NM().isEmpty()) return setMapResultAndMsg(resultMap, "fail", "이름을 입력해주세요.");
+        if (userDTO.getUSER_ID().isEmpty()) return setMapResultAndMsg(resultMap, "fail", "아이디를 입력해주세요.");
+        if (userDTO.getUSER_PW().isEmpty()) return setMapResultAndMsg(resultMap, "fail", "비밀번호를 입력해주세요.");
+
         // ID DUPLICATE CHECK
         if (userService.selectUserForId(userDTO.getUSER_ID()) != null) 
             return setMapResultAndMsg(resultMap, "fail", "이미 사용중인 아이디입니다.");
