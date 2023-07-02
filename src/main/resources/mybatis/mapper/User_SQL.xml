@@ -19,6 +19,10 @@
     </insert>
 
     <select id="selectUserForId" parameterType="String">
-        SELECT * FROM USER WHERE USER_ID = #{userId}
+        SELECT * FROM USER WHERE USER_ID = #{USER_ID}
+    </select>
+
+    <select id="selectUserForLogin" parameterType="userDTO">
+        SELECT * FROM USER WHERE USER_ID = #{USER_ID} AND USER_PW = HEX(AES_ENCRYPT(#{USER_PW}, #{USER_ID}))
     </select>
 </mapper>

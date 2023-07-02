@@ -7,5 +7,6 @@ import com.example.demo.web.dto.UserDTO;
 @Mapper
 public interface UserMapper {
     int insertUser(UserDTO userDTO);
-    UserDTO selectUserForId(String userId);
+    UserDTO selectUserForId(String USER_ID);
+    UserDTO selectUserForLogin(UserDTO userDTO);
 }

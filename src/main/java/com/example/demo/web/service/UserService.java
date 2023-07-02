@@ -16,7 +16,11 @@ public class UserService {
         return userMapper.insertUser(userDTO);
     }
 
-    public UserDTO selectUserForId(String userId) {
-        return userMapper.selectUserForId(userId);
+    public UserDTO selectUserForId(String USER_ID) {
+        return userMapper.selectUserForId(USER_ID);
+    }
+
+    public UserDTO selectUserForLogin(UserDTO userDTO) {
+        return userMapper.selectUserForLogin(userDTO);
     }
 } 
