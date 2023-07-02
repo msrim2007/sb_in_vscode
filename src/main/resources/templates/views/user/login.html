@@ -6,25 +6,23 @@
         
 <div layout:fragment="content">
     <div class="formWrapper">
-        <form id="signUpForm" name="userDTO">
-            NAME <input type="text" name="USER_NM" maxlength="18">
+        <form id="loginForm" name="userDTO">
             ID <input type="text" name="USER_ID" maxlength="20">
             PW <input type="password" name="USER_PW" maxlength="32">
-            <button type="button" id="submitSignUp" style="margin-top: 12px;">가입</button>
+            <button type="button" id="submitLogin" style="margin-top: 12px;">로그인</button>
         </form>
     </div>
 
     <script defer th:inline="javascript">
-        document.querySelector("#submitSignUp").addEventListener('click', (e) => {
-            fetch('/user/Ajax/signUpRequest.do', {
+        document.querySelector("#submitLogin").addEventListener('click', (e) => {
+            fetch('/user/Ajax/loginRequest.do', {
                 method: 'POST',
-                body: new FormData(document.getElementById('signUpForm'))
+                body: new FormData(document.getElementById('loginForm'))
             }).then(response => {
                 if (!response.ok) throw '문제가 발생했습니다.';
                 return response.json();
             }).then(res => {
                 if (res.result == 'fail') throw res.msg;
-                alert(res.msg);
                 location.href = '/';
             }).catch(err => alert(err));
         });

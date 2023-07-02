@@ -10,7 +10,7 @@
                 <a href="#" class="logout">로그아웃</a>
             </th:block>
             <th:block th:if="${userDTO == null}">
-                <a href="#" class="login"><strong>로그인</strong></a>
+                <a href="/user/login.do" class="login"><strong>로그인</strong></a>
                 <a href="/user/signUp.do" class="signup"><strong>회원가입</strong></a>
             </th:block>
         </ul>
