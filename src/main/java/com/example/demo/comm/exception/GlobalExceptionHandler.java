@@ -2,6 +2,7 @@ package com.example.demo.comm.exception;
 
 import java.io.IOException;
 
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,5 +20,10 @@ public class GlobalExceptionHandler {
     public void handleBasicException(HttpServletRequest request, HttpServletResponse response, Exception e) throws ServletException, IOException {
         request.setAttribute("message", e.getMessage());
         request.getRequestDispatcher(ERROR_PAGE).forward(request, response);
+    }
+
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public void handleUsernameNotFoundException(HttpServletRequest request, HttpServletResponse response, UsernameNotFoundException e) throws Exception {
+        throw new Exception(e.getMessage());
     }
 }

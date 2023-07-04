@@ -5,11 +5,11 @@
     <header id="header">
         <a href="/" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
         <ul class="account">
-            <th:block th:if="${userDTO != null}">
-                <a href="#" class="username" th:text="${userDTO.USER_NAME}"></a>
-                <a href="#" class="logout">로그아웃</a>
+            <th:block th:if="${_USER_DTO != null}">
+                <a href="#" class="username" th:text="${_USER_DTO.USER_NM}"></a>
+                <a href="/user/Ajax/logout.do" class="logout">로그아웃</a>
             </th:block>
-            <th:block th:if="${userDTO == null}">
+            <th:block th:if="${_USER_DTO == null}">
                 <a href="/user/login.do" class="login"><strong>로그인</strong></a>
                 <a href="/user/signUp.do" class="signup"><strong>회원가입</strong></a>
             </th:block>

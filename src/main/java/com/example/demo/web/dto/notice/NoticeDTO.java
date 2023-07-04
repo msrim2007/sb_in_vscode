@@ -1,4 +1,4 @@
-package com.example.demo.web.dto;
+package com.example.demo.web.dto.notice;
 
 import lombok.Builder;
 import lombok.Getter;

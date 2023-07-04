@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.example.demo.web.dto.NoticeDTO;
+import com.example.demo.web.dto.notice.NoticeDTO;
 
 @Mapper
 public interface NoticeMapper {

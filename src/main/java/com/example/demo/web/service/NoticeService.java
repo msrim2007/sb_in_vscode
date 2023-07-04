@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.web.dto.NoticeDTO;
+import com.example.demo.web.dto.notice.NoticeDTO;
 import com.example.demo.web.mapper.NoticeMapper;
 
 @Service("noticeService")

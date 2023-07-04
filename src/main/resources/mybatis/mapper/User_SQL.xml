@@ -12,7 +12,7 @@
             USER_AUTH_CD
         ) VALUES (
             #{USER_ID},
-            HEX(AES_ENCRYPT(#{USER_PW}, #{USER_ID})),
+            #{USER_PW},
             #{USER_NM},
             #{USER_AUTH_CD}
         )
@@ -20,9 +20,5 @@
 
     <select id="selectUserForId" parameterType="String">
         SELECT * FROM USER WHERE USER_ID = #{USER_ID}
-    </select>
-
-    <select id="selectUserForLogin" parameterType="userDTO">
-        SELECT * FROM USER WHERE USER_ID = #{USER_ID} AND USER_PW = HEX(AES_ENCRYPT(#{USER_PW}, #{USER_ID}))
     </select>
 </mapper>

@@ -6,14 +6,24 @@
         
 <div layout:fragment="content">
     <div class="formWrapper">
-        <form id="loginForm" name="userDTO">
+        <form class="form-control" id="loginForm" name="userDTO" action="/user/Ajax/loginRequest.do" method="POST">
             ID <input type="text" name="USER_ID" maxlength="20">
             PW <input type="password" name="USER_PW" maxlength="32">
-            <button type="button" id="submitLogin" style="margin-top: 12px;">로그인</button>
+            <input type="checkbox" name="remember-me">
+            <label for="remember-me">Remember me</label>
+            <button type="submit" style="margin-top: 12px;">로그인</button>
         </form>
     </div>
 
     <script defer th:inline="javascript">
+        /*<![CDATA[*/
+        document.addEventListener('DOMContentLoaded', (e) => {
+            console.log(/*[[${exception}]]*/);
+            if (/*[[${error}]]*/) alert(/*[[${exception}]]*/);
+        });
+        /*]]>*/
+        
+        /*
         document.querySelector("#submitLogin").addEventListener('click', (e) => {
             fetch('/user/Ajax/loginRequest.do', {
                 method: 'POST',
@@ -26,6 +36,7 @@
                 location.href = '/';
             }).catch(err => alert(err));
         });
+        */
     </script>
 </div>
 </html>
