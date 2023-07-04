@@ -8,10 +8,9 @@ import com.example.demo.web.dto.user.UserDTO;
 public class UserUtil {
     public static UserDTO getUserDTO() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        try {
+        try { // TODO : 로그인 전에 접근 시 CastException 나오는 이유 찾기
             if (auth != null) return (UserDTO) auth.getPrincipal();
-        } catch(ClassCastException e) {
-            System.out.println("어째서?");
+        } catch(Exception e) {
             return null;
         }
         return null;
